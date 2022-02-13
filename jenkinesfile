@@ -1,17 +1,17 @@
 pipeline {
     agent any
-          parameters{
-              string(name:'ENV',defaultvalue:'Test',description:'version to deploy')
-              booleanparam(name:'ExecuteTests',defaultvalue:true,description:'decide to run tc')
-              choice(name:'APPVERSION',choices['1.1','1.2','1.3'])
-          }
+    parameters{
+         string(name:'ENV',defaultvalue:'Test',description:'version to deploy')
+         booleanparam(name:'ExecuteTests',defaultvalue:true,description:'decide to run tc')
+         choice(name:'APPVERSION',choices['1.1','1.2','1.3'])      
+    }
     stages {
         stage('Build') {
             steps {
                 script {
-                echo "building the code"
+                echo "Building the code"
             }
-                        }
+                     }
     }
     stage('Test') {
         when{
@@ -23,7 +23,7 @@ pipeline {
             script {
                echo "Testing the code"
             }
-            
+   
         }
         }
  stage('Deploy'){
@@ -33,8 +33,8 @@ pipeline {
                 echo "Deploying to env: ${params.ENV}"
 
             }
-    }
-    }
+        }
+        }
     }
 }
 
