@@ -13,8 +13,8 @@ pipeline {
                 sh 'mvn compile'
             }
                      }
-    }
-    stage('UNIT TEST') {
+        }
+    stage('UNITTEST') {
         steps {
             script {
                echo "RUNNING THE UNIT TEST CASES"
@@ -24,15 +24,15 @@ pipeline {
         }
         post{
             always{
-                junit'targetsurefire-reports/*.xml'
+                junit 'target/surefire-reports/*.xml'
             }
         }
         }
      stage('PACKAGE'){
          steps{
              script{
-                 echo "PACKAGING THE CODE"
-                 sh 'mvn package'    
+                echo "PACKAGING THE CODE"
+                sh 'mvn package'    
              }
          }
     }   
