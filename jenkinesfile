@@ -37,8 +37,8 @@ pipeline {
                  sshagent(['Test_Server_Key']){
 
                 echo "PACKAGING THE CODE"
-                sh "scp -o strickthostkeychecking=no server-script.sh ec2-user@172.31.4.130:/home/ec2-user"
-                sh "ssh -o strickthostkeychecking=no ec2-user@172.31.4.130 'bash ~/server-script.sh'"  
+                sh "scp -o stricthostkeychecking=no server-script.sh ec2-user@172.31.4.130:/home/ec2-user"
+                sh "ssh -o stricthostkeychecking=no ec2-user@172.31.4.130 'bash ~/server-script.sh'"  
                 
                  } 
              }
