@@ -6,7 +6,7 @@ pipeline {
         choice(name:'APPVERSION',choices:['1.1','1.2','1.3'])
     }
     environment{
-        NEW_VERSION:'2.1'
+        NEW_VERSION ='2.1'
     }
     stages {
         stage('Build') {
