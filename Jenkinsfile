@@ -30,8 +30,8 @@ pipeline {
             steps {
                 script{
                     echo "Deploying the app"
-                    echo "Deploying to env: ${params.ENV}"
-                    
+                    echo "Deploying the app to env: ${params.ENV}"
+                    echo "Deploying the app version: ${params.APPVERSION}"
                     }
                     
             }     
